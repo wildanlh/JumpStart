@@ -5,14 +5,14 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="bg-blue">
-      <div className="container mx-auto py-20 md:text-base text-sm">
+      <div className="container mx-auto py-10 md:text-base text-sm">
         <div className="flex">
           <Image
             src="images/logo.svg"
             alt="logo"
             width={500}
             height={500}
-            className="mx-auto w-20 py-14"
+            className="mx-auto w-20 mb-10"
           />
         </div>
         <div className="flex justify-center">
