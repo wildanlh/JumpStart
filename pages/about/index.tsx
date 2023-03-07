@@ -8,24 +8,24 @@ export default function AboutPage() {
     <>
       <PageHead pageTitle="About Us | JumpStart" />
       <PageLayout>
-        <div className="bg-white flex justify-center items-center h-5/6 py-10">
+        <div className="bg-white flex justify-center items-center h-5/6 py-20">
           <div className="mx-auto container">
-            <h1 className="font-poppins font-bold text-blue text-3xl text-center">
+            <h1 className="font-poppins font-bold text-blue text-3xl text-center pt-20 pb-10">
               We believe in businesses like yours
             </h1>
             <div className="flex">
               <Image
                 src="images/group-presentation.svg"
                 alt="image"
-                width={500}
-                height={500}
+                width={400}
+                height={400}
                 className="mx-auto my-10"
               />
             </div>
           </div>
         </div>
 
-        <div className="bg-cyan flex justify-center items-center h-5/6 py-10">
+        <div className="bg-cyan flex justify-center items-center h-5/6 py-20">
           <div className="mx-auto container">
             <div className="flex">
               <div className="w-1/2 mx-auto">
@@ -43,8 +43,8 @@ export default function AboutPage() {
                 <Image
                   src="images/teamwork.svg"
                   alt="image"
-                  width={500}
-                  height={500}
+                  width={400}
+                  height={400}
                   className="mx-auto my-10"
                 />
               </div>
@@ -52,7 +52,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="bg-white flex justify-center items-center h-5/6 py-10">
+        <div className="bg-white flex justify-center items-center h-5/6 py-20">
           <div className="mx-auto container">
             <div className="flex">
               <div className="w-1/2 mx-auto">
