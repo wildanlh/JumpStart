@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <PageHead pageTitle="JumpStart" />
+      <PageHead pageTitle="Home | JumpStart" />
       <PageLayout>
         <div className="bg-blue flex justify-center items-center h-5/6 py-10">
           <div className="mx-auto container">
