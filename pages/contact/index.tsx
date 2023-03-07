@@ -9,9 +9,9 @@ export default function ContactPage() {
     <>
       <PageHead pageTitle="Contact Us | JumpStart" />
       <PageLayout>
-        <div className="bg-cyan flex justify-center items-center h-5/6 py-10">
+        <div className="bg-cyan flex justify-center items-center h-5/6 py-20">
           <div className="mx-auto container">
-            <div className="my-10">
+            <div className="my-28">
               <h1 className="font-poppins font-bold text-blue text-3xl text-center">
                 We’re here to help
               </h1>
@@ -25,12 +25,12 @@ export default function ContactPage() {
                   <Image
                     src="images/call.svg"
                     alt="image"
-                    width={75}
-                    height={75}
+                    width={60}
+                    height={60}
                     className="mx-auto"
                   />
                 </div>
-                <h1 className="text-blue text-2xl font-bold text-center mt-8 font-poppins">
+                <h1 className="text-blue text-xl font-bold text-center mt-8 font-poppins">
                   +1 123 456
                 </h1>
               </div>
@@ -39,12 +39,12 @@ export default function ContactPage() {
                   <Image
                     src="images/mail.svg"
                     alt="image"
-                    width={75}
-                    height={75}
+                    width={60}
+                    height={60}
                     className="mx-auto"
                   />
                 </div>
-                <h1 className="text-blue text-2xl font-bold text-center mt-8 font-poppins">
+                <h1 className="text-blue text-xl font-bold text-center mt-8 font-poppins">
                   help@e-warehouse.com
                 </h1>
               </div>
@@ -53,12 +53,12 @@ export default function ContactPage() {
                   <Image
                     src="images/pin-location.svg"
                     alt="image"
-                    width={75}
-                    height={75}
+                    width={60}
+                    height={60}
                     className="mx-auto"
                   />
                 </div>
-                <h1 className="text-blue text-2xl font-bold text-center mt-8 font-poppins">
+                <h1 className="text-blue text-xl font-bold text-center mt-8 font-poppins">
                   Singapore
                 </h1>
               </div>
