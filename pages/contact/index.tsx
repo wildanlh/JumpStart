@@ -7,7 +7,7 @@ import React from "react";
 export default function ContactPage() {
   return (
     <>
-      <PageHead pageTitle="About Us | JumpStart" />
+      <PageHead pageTitle="Contact Us | JumpStart" />
       <PageLayout>
         <div className="bg-cyan flex justify-center items-center h-5/6 py-10">
           <div className="mx-auto container">
