@@ -19,17 +19,18 @@ const Footer: React.FC<FooterProps> = ({ links }) => {
           />
         </div>
         <div className="flex justify-center items-center">
-          <div className="flex space-x-16">
+          <ul className="flex space-x-20">
             {links.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className="font-poppins text-white font-bold uppercase"
-              >
-                {label}
-              </Link>
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="font-poppins text-white hover:border-b-2 hover:border-white hover:transition hover:ease-in-out hover:delay-150 hover:duration-700 font-semibold uppercase"
+                >
+                  {label}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
         <p className="text-white text-center font-opensans pt-10">
           © 2023 JumpStart Inventory Software. All rights reserved.
