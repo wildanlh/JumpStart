@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <PageHead pageTitle="Home | JumpStart" />
       <PageLayout>
-        <div className="bg-blue flex justify-center items-center h-5/6 py-10">
+        <div className="bg-blue flex justify-center items-center h-5/6 py-20">
           <div className="mx-auto container">
             <div className="flex flex-col items-center lg:flex-row py-5">
               <div className="lg:w-1/2 px-4 py-10 lg:p-20 text-center lg:text-left">
