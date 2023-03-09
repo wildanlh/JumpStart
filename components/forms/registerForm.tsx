@@ -116,14 +116,15 @@ export default function RegisterForm() {
         </div>
         <div className="md:col-span-2">
           <input
-            id="password"
-            name="password"
-            type="file"
-            autoComplete="current-password"
-            required
             className="relative block w-full p-3 border border-blue placeholder-blue text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-            placeholder="Password"
+            aria-describedby="user_avatar_help"
+            id="user_avatar"
+            type="file"
           />
+          <div className="mt-1 text-sm text-gray-500 " id="user_avatar_help">
+            A profile picture is useful to confirm your are logged into your
+            account
+          </div>
         </div>
         <div>
           <button className="w-full bg-orange text-white p-3 rounded-full font-medium">
