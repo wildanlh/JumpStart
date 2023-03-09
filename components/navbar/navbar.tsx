@@ -22,13 +22,13 @@ const Navbar: React.FC<NavbarProps> = ({ logoSrc, links }) => {
         <div className="flex md:order-2">
           <Link
             href="/login"
-            className="text-white font-poppins font-bold hidden md:block"
+            className="text-white  py-1 font-poppins font-bold hidden md:block"
           >
             Login
           </Link>
           <Link
             href="/register"
-            className="text-blue bg-white px-2 rounded-md font-poppins font-bold ml-3 hidden md:block"
+            className="text-blue bg-white py-1 px-2 rounded-md font-poppins font-bold ml-3 hidden md:block"
           >
             Join
           </Link>
@@ -61,8 +61,8 @@ const Navbar: React.FC<NavbarProps> = ({ logoSrc, links }) => {
         >
           <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-10 md:mt-0 md:text-base md:font-bold text-white md:border-0 font-poppins font-bold uppercase">
             {links.map(({ href, label }) => (
-              <li key={href}>
-                <Link href={href} className="block py-2 pl-3 pr-4 md:p-0">
+              <li key={href} className="py-1">
+                <Link href={href} className="block pl-3 pr-4 md:p-0">
                   {label}
                 </Link>
               </li>
