@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import { useRouter } from "next/router";
-import SideForm from "../forms/sideForm";
 import Sidebar from "../sidebar/sidebar";
 
 type Props = {
@@ -14,7 +13,7 @@ const links = [
   { icon: "/images/customers.svg", href: "/customers", label: "Customers" },
   {
     icon: "/images/archive.svg",
-    href: "/current-stock",
+    href: "/current-stocks",
     label: "Current Stocks",
   },
   {
@@ -26,14 +25,10 @@ const links = [
 ];
 
 export default function InventoryLayout(props: Props) {
-  const router = useRouter();
-  const isDashboardPage = router.pathname === "/dashboard";
-
   return (
     <div className="w-full">
       <Sidebar logoSrc="images/logo.svg" links={links} />
-      <main>{props.children}</main>
-      {!isDashboardPage && <SideForm />}
+      <main className="bg-white">{props.children}</main>
     </div>
   );
 }

@@ -1,12 +1,16 @@
 import React from "react";
 
-export default function InventoryTable() {
+interface InventoryProps {
+  tableTitle: string;
+}
+
+export default function InventoryTable({ tableTitle }: InventoryProps) {
   return (
     <div className="p-4 sm:ml-64 sm:mr-64">
       <div className="flex items-center justify-between pt-5 pb-10">
         <div>
           <h1 className="text-dark text-3xl font-bold font-popins">
-            Suppliers
+            {tableTitle}
           </h1>
         </div>
         <label htmlFor="table-search" className="sr-only">
