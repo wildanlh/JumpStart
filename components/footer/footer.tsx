@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
 interface FooterProps {
   links: { href: string; label: string }[];
 }
@@ -8,18 +9,18 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ links }) => {
   return (
     <footer className="bg-blue">
-      <div className="container mx-auto py-10 md:text-base text-sm">
-        <div className="flex">
+      <div className="container mx-auto py-10 text-center">
+        <div className="flex justify-center items-center">
           <Image
             src="images/logo.svg"
             alt="logo"
-            width={500}
-            height={500}
+            width={80}
+            height={80}
             className="mx-auto w-20 mb-10"
           />
         </div>
-        <div className="flex justify-center items-center">
-          <ul className="flex space-x-20">
+        <div className="mb-10">
+          <ul className="flex justify-center space-x-8">
             {links.map(({ href, label }) => (
               <li key={href}>
                 <Link
@@ -32,7 +33,7 @@ const Footer: React.FC<FooterProps> = ({ links }) => {
             ))}
           </ul>
         </div>
-        <p className="text-white text-center font-opensans pt-10">
+        <p className="text-white font-opensans">
           © 2023 JumpStart Inventory Software. All rights reserved.
         </p>
       </div>
