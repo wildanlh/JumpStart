@@ -7,16 +7,16 @@ import InventoryTable from "@/components/table/inventoryTable";
 import Image from "next/image";
 import React from "react";
 
-export default function SuppliersPage() {
+export default function CostumersPage() {
   return (
     <>
-      <PageHead pageTitle="Suppliers | JumpStart" />
+      <PageHead pageTitle="Costumers | JumpStart" />
       <InventoryLayout>
-        <InventoryTable tableTitle="Suppliers" />
+        <InventoryTable tableTitle="Customers" />
         <SideForm>
           <div className="flex justify-between content-between">
             <h1 className="text-xl text-blue font-bold font-poppins">
-              Suppliers
+              Costumer
             </h1>
             <button>
               <Image
@@ -31,9 +31,9 @@ export default function SuppliersPage() {
           <form action="" className="my-5">
             <div className="rounded-md shadow-sm text-base font-inter">
               <Input
-                label="Supplier Code"
-                id="supplierCode"
-                placeholder="Supplier Code"
+                label="Costumer Code"
+                id="costumerCode"
+                placeholder="Costumer Code"
               />
               <Input
                 label="First Name"

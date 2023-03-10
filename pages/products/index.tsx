@@ -1,5 +1,8 @@
 import Button from "@/components/forms/button";
+import FileInput from "@/components/forms/fileInput";
+import Img from "@/components/forms/img";
 import Input from "@/components/forms/input";
+import Select from "@/components/forms/select";
 import SideForm from "@/components/forms/sideForm";
 import PageHead from "@/components/header/pageHead";
 import InventoryLayout from "@/components/layouts/inventoryLayout";
@@ -7,16 +10,26 @@ import InventoryTable from "@/components/table/inventoryTable";
 import Image from "next/image";
 import React from "react";
 
-export default function SuppliersPage() {
+const options = ["John Doe", "Jane Doe", "Bob Smith"];
+
+export default function ProductPage() {
+  function handleFileInputChange(
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void {
+    const file = event.target.files?.[0];
+    if (file) {
+      console.log(file.name);
+    }
+  }
   return (
     <>
-      <PageHead pageTitle="Suppliers | JumpStart" />
+      <PageHead pageTitle="Products | JumpStart" />
       <InventoryLayout>
-        <InventoryTable tableTitle="Suppliers" />
+        <InventoryTable tableTitle="Products" />
         <SideForm>
           <div className="flex justify-between content-between">
             <h1 className="text-xl text-blue font-bold font-poppins">
-              Suppliers
+              Products
             </h1>
             <button>
               <Image
@@ -30,32 +43,52 @@ export default function SuppliersPage() {
           </div>
           <form action="" className="my-5">
             <div className="rounded-md shadow-sm text-base font-inter">
+              <Select
+                name="Supplier"
+                label="Supplier"
+                id="suppliers"
+                options={options}
+              />
+              <Img src="images/iphone.svg" alt="iphone" />
+
               <Input
-                label="Supplier Code"
-                id="supplierCode"
-                placeholder="Supplier Code"
+                label="Product Code"
+                id="productCode"
+                placeholder="Product Code"
               />
               <Input
-                label="First Name"
-                id="firstName"
-                placeholder="First Name"
+                label="Product Name"
+                id="productName"
+                placeholder="Product Name"
               />
-              <Input label="Last Name" id="lastName" placeholder="Last Name" />
-              <Input label="Phone" id="phone" placeholder="Phone" />
-              <Input label="Debit" id="debit" placeholder="Debit" />
-              <Input label="Credit" id="debit" placeholder="Credit" />
+              <Input label="Quantity" id="quantity" placeholder="Quantity" />
+              <Input
+                label="Cost Price"
+                id="costPrice"
+                placeholder="Cost Price"
+              />
+              <Input
+                label="Selling Price"
+                id="sellingPrice"
+                placeholder="Selling Price"
+              />
+              <Input label="Brand" id="brand" placeholder="Brand" />
+              <FileInput
+                label="Product Image"
+                onChange={handleFileInputChange}
+              />
             </div>
             <div className="my-10">
               <div className="flex justify-between content-between">
                 <Button
                   label="Add"
                   backgroundColor="bg-orange"
-                  paddingX="px-9"
+                  paddingX="px-8"
                 />
                 <Button
                   label="Edit"
                   backgroundColor="bg-yellow"
-                  paddingX="px-9"
+                  paddingX="px-8"
                 />
               </div>
               <Button

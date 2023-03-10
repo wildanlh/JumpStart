@@ -1,5 +1,7 @@
 import Button from "@/components/forms/button";
+import FileInput from "@/components/forms/fileInput";
 import Input from "@/components/forms/input";
+import Select from "@/components/forms/select";
 import SideForm from "@/components/forms/sideForm";
 import PageHead from "@/components/header/pageHead";
 import InventoryLayout from "@/components/layouts/inventoryLayout";
@@ -7,17 +9,25 @@ import InventoryTable from "@/components/table/inventoryTable";
 import Image from "next/image";
 import React from "react";
 
-export default function SuppliersPage() {
+const options = ["Admin", "User"];
+
+export default function UsersPage() {
+  function handleFileInputChange(
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void {
+    const file = event.target.files?.[0];
+    if (file) {
+      console.log(file.name);
+    }
+  }
   return (
     <>
-      <PageHead pageTitle="Suppliers | JumpStart" />
+      <PageHead pageTitle="Users | JumpStart" />
       <InventoryLayout>
-        <InventoryTable tableTitle="Suppliers" />
+        <InventoryTable tableTitle="Users" />
         <SideForm>
           <div className="flex justify-between content-between">
-            <h1 className="text-xl text-blue font-bold font-poppins">
-              Suppliers
-            </h1>
+            <h1 className="text-xl text-blue font-bold font-poppins">Users</h1>
             <button>
               <Image
                 src="images/trash.svg"
@@ -31,19 +41,17 @@ export default function SuppliersPage() {
           <form action="" className="my-5">
             <div className="rounded-md shadow-sm text-base font-inter">
               <Input
-                label="Supplier Code"
-                id="supplierCode"
-                placeholder="Supplier Code"
-              />
-              <Input
                 label="First Name"
                 id="firstName"
                 placeholder="First Name"
               />
               <Input label="Last Name" id="lastName" placeholder="Last Name" />
               <Input label="Phone" id="phone" placeholder="Phone" />
-              <Input label="Debit" id="debit" placeholder="Debit" />
-              <Input label="Credit" id="debit" placeholder="Credit" />
+              <Input label="Address" id="address" placeholder="Address" />
+              <Input label="City" id="debit" placeholder="Country" />
+              <Input label="Email" id="email" placeholder="Email" />
+              <Select name="Role" label="Role" id="role" options={options} />
+              <FileInput label="User Image" onChange={handleFileInputChange} />
             </div>
             <div className="my-10">
               <div className="flex justify-between content-between">
