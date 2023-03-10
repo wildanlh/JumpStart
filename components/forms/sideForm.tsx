@@ -1,8 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import React, { ReactNode } from "react";
+import { FC } from "react";
 
-export default function SideForm() {
+type Props = {
+  children: ReactNode;
+};
+
+export default function SideForm(props: Props) {
   return (
     <>
       <button
@@ -30,69 +34,11 @@ export default function SideForm() {
 
       <aside
         id="logo-sidebar"
-        className="fixed top-0 right-0 z-40 w-64 h-screen border-l-2 border-blue transition-transform -translate-x-full sm:translate-x-0"
+        className="fixed top-0 right-0 z-40 w-64 h-screen border-l-2 border-light transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-4 overflow-y-auto bg-white">
-          <div className="flex justify-between content-between">
-            <h1 className="text-xl text-blue font-bold font-poppins">
-              Supplier ID
-            </h1>
-            <Image
-              src="images/trash.svg"
-              alt="logo"
-              width={24}
-              height={24}
-              className="w-6 h-6"
-            />
-          </div>
-          <form action="" className="my-5">
-            <div className="rounded-md shadow-sm text-base font-inter">
-              <div>
-                <label htmlFor="code" className="font-poppins font-bold">
-                  Supplier Code
-                </label>
-                <input
-                  id="code"
-                  name="code"
-                  type="text"
-                  required
-                  className="mt-2 mb-5 relative block w-full p-3 border border-blue placeholder-blue text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                  placeholder="Supplier Code"
-                />
-              </div>
-
-              <div className="mb-5">
-                <label htmlFor="code" className="font-poppins font-bold">
-                  Supplier Code
-                </label>
-                <select
-                  id="countries"
-                  className="mt-2 relative block w-full p-3 border border-blue placeholder-blue text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                >
-                  <option>United States</option>
-                  <option>Canada</option>
-                  <option>France</option>
-                  <option>Germany</option>
-                </select>
-                <p className="text-blue text-sm text-center font-inter">
-                  New SUppliers?
-                  <Link href="/register" className="underline ml-2">
-                    Click Here
-                  </Link>
-                </p>
-              </div>
-
-              <div>
-                <input
-                  className="relative block w-full p-3 border border-blue placeholder-blue text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                  aria-describedby="user_avatar_help"
-                  id="user_avatar"
-                  type="file"
-                />
-              </div>
-            </div>
-          </form>
+          <main>{props.children}</main>
         </div>
       </aside>
     </>
