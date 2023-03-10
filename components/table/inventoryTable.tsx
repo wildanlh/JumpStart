@@ -1,17 +1,17 @@
 import React from "react";
 
-interface InventoryProps {
-  tableTitle: string;
+interface DataTableProps {
+  title: string;
+  columns: string[];
+  data: any[];
 }
 
-export default function InventoryTable({ tableTitle }: InventoryProps) {
+export default function DataTable({ title, columns, data }: DataTableProps) {
   return (
     <div className="p-4 sm:ml-64 sm:mr-64">
       <div className="flex items-center justify-between pt-5 pb-10">
         <div>
-          <h1 className="text-dark text-3xl font-bold font-popins">
-            {tableTitle}
-          </h1>
+          <h1 className="text-dark text-3xl font-bold font-popins">{title}</h1>
         </div>
         <label htmlFor="table-search" className="sr-only">
           Search
@@ -26,9 +26,9 @@ export default function InventoryTable({ tableTitle }: InventoryProps) {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
           </div>
@@ -44,43 +44,26 @@ export default function InventoryTable({ tableTitle }: InventoryProps) {
         <table className="w-full text-sm text-left text-dark">
           <thead className="text-sm text-white uppercase bg-orange font-poppins">
             <tr>
-              <th scope="col" className="px-6 py-3">
-                Product name
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Color
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Category
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Price
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Action
-              </th>
+              {columns.map((column) => (
+                <th key={column} scope="col" className="px-6 py-3">
+                  {column}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-light border-b font-medium font-inter">
-              <th
-                scope="row"
-                className="px-6 py-4 font-medium text-dark whitespace-nowrap "
+            {data.map((rowData, index) => (
+              <tr
+                key={index}
+                className="bg-light border-b font-medium font-inter"
               >
-                Apple MacBook Pro
-              </th>
-              <td className="px-6 py-4">Silver</td>
-              <td className="px-6 py-4">Laptop</td>
-              <td className="px-6 py-4">$2999</td>
-              <td className="px-6 py-4">
-                <a
-                  href="#"
-                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >
-                  Edit
-                </a>
-              </td>
-            </tr>
+                {columns.map((column, index) => (
+                  <td key={index} className="px-6 py-4">
+                    {rowData[column]}
+                  </td>
+                ))}
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
