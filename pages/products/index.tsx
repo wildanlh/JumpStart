@@ -6,13 +6,20 @@ import Select from "@/components/forms/select";
 import SideForm from "@/components/forms/sideForm";
 import PageHead from "@/components/header/pageHead";
 import InventoryLayout from "@/components/layouts/inventoryLayout";
-import InventoryTable from "@/components/table/inventoryTable";
+import DataTable from "@/components/table/inventoryTable";
 import Image from "next/image";
 import React from "react";
 
 const options = ["John Doe", "Jane Doe", "Bob Smith"];
 
 export default function ProductPage() {
+  const columns = ["Name", "Age", "Email"];
+  const data = [
+    { Name: "John", Age: 25, Email: "john@example.com" },
+    { Name: "Jane", Age: 30, Email: "jane@example.com" },
+    { Name: "Bob", Age: 40, Email: "bob@example.com" },
+  ];
+
   function handleFileInputChange(
     event: React.ChangeEvent<HTMLInputElement>
   ): void {
@@ -25,7 +32,7 @@ export default function ProductPage() {
     <>
       <PageHead pageTitle="Products | JumpStart" />
       <InventoryLayout>
-        <InventoryTable tableTitle="Products" />
+        <DataTable title="Products" columns={columns} data={data} />
         <SideForm>
           <div className="flex justify-between content-between">
             <h1 className="text-xl text-blue font-bold font-poppins">

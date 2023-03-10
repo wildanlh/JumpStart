@@ -1,7 +1,41 @@
+import ContactCardArray from "@/components/cards/contactCard";
 import PageHead from "@/components/header/pageHead";
 import PageLayout from "@/components/layouts/pageLayout";
 import Image from "next/image";
 import React from "react";
+
+const contacts = [
+  {
+    name: "John Doe",
+    position: "CEO",
+    src: "/images/person1.jpg",
+  },
+  {
+    name: "Jane Doe",
+    position: "COO",
+    src: "/images/person2.jpg",
+  },
+  {
+    name: "Bob Smith",
+    position: "Director",
+    src: "/images/person3.jpg",
+  },
+  {
+    name: "Bob Sadino",
+    position: "Developer",
+    src: "/images/person4.jpg",
+  },
+  {
+    name: "Smith Jackson",
+    position: "Designer",
+    src: "/images/person5.jpg",
+  },
+  {
+    name: "Felix Jackson",
+    position: "Manager",
+    src: "/images/person6.jpg",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -65,6 +99,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+            <ContactCardArray contacts={contacts} />
           </div>
         </div>
       </PageLayout>

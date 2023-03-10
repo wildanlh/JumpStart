@@ -5,18 +5,25 @@ import Select from "@/components/forms/select";
 import SideForm from "@/components/forms/sideForm";
 import PageHead from "@/components/header/pageHead";
 import InventoryLayout from "@/components/layouts/inventoryLayout";
-import InventoryTable from "@/components/table/inventoryTable";
+import DataTable from "@/components/table/inventoryTable";
 import Image from "next/image";
 import React from "react";
 
 const options = ["John Doe", "Jane Doe", "Bob Smith"];
 
 export default function CurrentStocksPage() {
+  const columns = ["Name", "Age", "Email"];
+  const data = [
+    { Name: "John", Age: 25, Email: "john@example.com" },
+    { Name: "Jane", Age: 30, Email: "jane@example.com" },
+    { Name: "Bob", Age: 40, Email: "bob@example.com" },
+  ];
+
   return (
     <>
       <PageHead pageTitle="Current Stock | JumpStart" />
       <InventoryLayout>
-        <InventoryTable tableTitle="Current Stocks" />
+        <DataTable title="Current Stocks" columns={columns} data={data} />
         <SideForm>
           <div className="flex justify-between content-between">
             <h1 className="text-xl text-blue font-bold font-poppins">
